@@ -1,10 +1,72 @@
-*{
+* {
   text-decoration: none;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-:root{
+:root {
   font-size: 62.5%;
+  --bc-main: #121214;
+  --bc-controller: rgba(66, 211, 255, 0.13);
+  --fc-timer: #ffffff;
+  --ff-timer: "Roboto", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+main {
+  background-color: var(--bc-main);
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.timer h1 {
+  font-family: var(--ff-timer);
+  font-weight: 700;
+  font-size: 8.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--fc-timer);
+  
+}
+
+.controller {
+  margin-top: 1.6rem;
+  background-color: var(--bc-controller);
+  width: 22.8rem;
+  height: 10.8rem;
+  border-radius: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+
+}
+
+.controller img{
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.controller img:hover{
+  transform: scale(1.1);
+}
+
+.sound {
+  position: absolute;
+  bottom: 3.2rem;
+  right: 4rem;
+}
+
+.sound img{
+  cursor: pointer;
+  transition: transform 0.5gits;
+}
+
+.sound img:hover{
+  transform: scale(1.1);
 }
