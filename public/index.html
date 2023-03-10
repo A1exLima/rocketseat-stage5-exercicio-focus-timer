@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Temporizador Estilo Pomodoro" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <title>Focus Timer</title>
+    <title>FocusTimer - Pomodoro</title>
     <link
       rel="shortcut icon"
       href="../public/images/timer.svg"
@@ -23,15 +24,33 @@
     <main>
       <div class="container">
         <div class="timer">
-          <h1>11:11</h1>
+          <h1><span id="hour">11</span>:<span id="minute">11</span></h1>
         </div>
         <div class="controller">
-          <img src="../public/images/play.svg" alt="controler play/pause" />
-          <img src="../public/images/timer.svg" alt="temporizador" />
+          <button class="play">
+            <img src="../public/images/play.svg" alt="play" />
+          </button>
+
+          <button class="pause controller-img-off">
+            <img src="../public/images/pause.svg" alt="pause" />
+          </button>
+
+          <button class="stop controller-img-off">
+            <img src="../public/images/stop.svg" alt="stop" />
+          </button>
+
+          <button class="timer">
+            <img src="../public/images/timer.svg" alt="temporizador" />
+          </button>
         </div>
       </div>
       <div class="sound">
-        <img src="../public/images/soundOn.svg" alt="som on/off" />
+        <button class="">
+          <img src="../public/images/soundOn.svg" alt="som on" />
+        </button>
+        <button class="sound-img-toggle">
+          <img src="../public/images/soundOff.svg" alt="som off" />
+        </button>
       </div>
     </main>
   </body>

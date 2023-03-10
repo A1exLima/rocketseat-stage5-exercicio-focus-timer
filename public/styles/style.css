@@ -56,6 +56,15 @@ main {
   transform: scale(1.1);
 }
 
+button{
+  background: none;
+  border: none;
+}
+
+.controller-img-off{
+  display: none;
+}
+
 .sound {
   position: absolute;
   bottom: 3.2rem;
@@ -64,9 +73,13 @@ main {
 
 .sound img{
   cursor: pointer;
-  transition: transform 0.5gits;
+  transition: transform 0.5s;
 }
 
 .sound img:hover{
   transform: scale(1.1);
+}
+
+.sound-img-toggle{
+  display: none;
 }
