@@ -1,34 +1,34 @@
-const startupControlButton = {
-  buttonPlay: document.querySelector(".play"),
-  buttonPause: document.querySelector(".pause"),
-  buttonStop: document.querySelector(".stop"),
+import { controlButton } from "../javaScripts/buttonToogle.js"
 
-  buttonPlayToggle(event) {
+const startupControl = {
+  buttonPlay(event) {
     event.preventDefault(event)
-    startupControlButton.buttonPlay.classList.add("hide")
-    startupControlButton.buttonPause.classList.remove("hide")
+
+    controlButton.play()
   },
-  buttonPauseToggle(event) {
+  buttonPause(event) {
     event.preventDefault(event)
-    startupControlButton.buttonPause.classList.add("hide")
-    startupControlButton.buttonStop.classList.remove("hide")
+
+    controlButton.pause()
   },
-  buttonStopToggle(event) {
+  buttonStop(event) {
     event.preventDefault(event)
-    startupControlButton.buttonStop.classList.add("hide")
-    startupControlButton.buttonPlay.classList.remove("hide")
+
+    controlButton.stop()
+  },
+  buttonTimer(event) {
+    event.preventDefault(event)
+    
+    console.log("teste temporizador")
   },
 }
 
-startupControlButton.buttonPlay.addEventListener(
-  "click",
-  startupControlButton.buttonPlayToggle
-)
-startupControlButton.buttonPause.addEventListener(
-  "click",
-  startupControlButton.buttonPauseToggle
-)
-startupControlButton.buttonStop.addEventListener(
-  "click",
-  startupControlButton.buttonStopToggle
-)
+const buttonPlay = document.querySelector(".play")
+const buttonPause = document.querySelector(".pause")
+const buttonTimer = document.querySelector(".timer")
+const buttonStop = document.querySelector(".stop")
+
+buttonPlay.addEventListener("click", startupControl.buttonPlay)
+buttonPause.addEventListener("click", startupControl.buttonPause)
+buttonStop.addEventListener("click", startupControl.buttonStop)
+buttonTimer.addEventListener("click", startupControl.buttonTimer)

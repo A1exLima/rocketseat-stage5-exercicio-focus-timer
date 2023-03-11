@@ -24,7 +24,7 @@ main {
   place-content: center;
 }
 
-.timer h1 {
+.cont-timer h1 {
   font-family: var(--ff-timer);
   font-weight: 700;
   font-size: 8.8rem;
