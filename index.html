@@ -13,9 +13,8 @@
       type="image/svg"
     />
     <link rel="stylesheet" href="./public/styles/style.css" />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <script src="./public/javaScripts/main.js" type="module" defer></script>
@@ -45,13 +44,30 @@
         </div>
       </div>
       <div class="sound">
-        <button class="">
+        <button class="soundOn">
           <img src="./public/images/soundOn.svg" alt="som on" />
         </button>
-        <button class="hide">
+        <button class="soundOff hide">
           <img src="./public/images/soundOff.svg" alt="som off" />
         </button>
       </div>
     </main>
+    <section class="box-hour-minute hide">
+      <form>
+        <div class="container-timer">
+          <div>
+            <label for="hour">Hora</label>
+            <input id="hour" type="number" />
+          </div>
+          <div>
+            <label for="minute">Minuto</label>
+            <input id="minute" type="number" />
+          </div>
+        </div>
+        <button class="confirm-hour-minute">
+          <img src="./public/images/verificado.png" alt="Confirmação" />
+        </button>
+      </form>
+    </section>
   </body>
 </html>

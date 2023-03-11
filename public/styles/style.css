@@ -69,10 +69,82 @@ button{
 
 .sound img{
   cursor: pointer;
-  transition: transform 0.5s;
+  transition: transform 0.7s;
 }
 
 .sound img:hover{
+  transform: scale(1.1);
+}
+
+section{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  background-color: #121214;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 22.8rem;
+  height: 20rem;
+  background-color: var(--bc-controller);
+  border-radius: 5rem;
+}
+
+.container-timer{
+  display: flex;
+  flex-direction: row;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 2rem;
+
+}
+
+form label {
+  font-family: var(--ff-timer);
+  color: var(--fc-timer);
+  font-weight:400;
+  font-size: 1.35rem;
+  margin-bottom: 0.8rem;
+}
+form input {
+  width: 6rem;
+  height: 5rem;
+  border-radius: .7rem;
+  border: none;
+  padding: .7rem;
+  text-align: center;
+  font-size: 1.9rem;
+  font-family: var(--ff-timer);
+  font-weight: 700;
+  color: rgb(56, 58, 58);
+  background-color: rgb(234, 234, 234);
+}
+
+form input:focus {
+  outline: 3px solid #2195f36d;
+}
+
+form button {
+  margin-top: 2.5rem;
+  cursor: pointer;
+}
+
+form button img{
+  width: 5.2rem;
+  height: 5.2rem;
+  transition: transform 0.7s;
+}
+
+form button img:hover{
   transform: scale(1.1);
 }
 
