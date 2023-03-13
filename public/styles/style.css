@@ -8,7 +8,7 @@
 :root {
   font-size: 62.5%;
   --bc-main: #121214;
-  --bc-controller: #1c5060;
+  --bc-controller: rgba(66, 211, 255, 0.13);
   --fc-timer: #ffffff;
   --ff-timer: "Roboto", sans-serif;
 }
