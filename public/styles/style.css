@@ -8,13 +8,36 @@
 :root {
   font-size: 62.5%;
   --bc-main: #121214;
-  --bc-controller: rgba(66, 211, 255, 0.13);
+  --bc-controller: #1c5060;
   --fc-timer: #ffffff;
   --ff-timer: "Roboto", sans-serif;
 }
 
 body {
   font-size: 1.6rem;
+}
+
+.alert-hour-minute {
+  z-index: 1;
+  position: absolute;
+  color: white;
+  font-family: var(--ff-timer);
+  text-align: center;
+  width: 100vw;
+  height: 3.6rem;
+  background-color: #f03e3e;
+  display: grid;
+  place-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: transform .5s;
+}
+
+.hide-alert{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 main {
@@ -31,7 +54,6 @@ main {
   text-align: center;
   text-transform: uppercase;
   color: var(--fc-timer);
-  
 }
 
 .controller {
@@ -44,19 +66,18 @@ main {
   justify-content: center;
   align-items: center;
   gap: 3.2rem;
-
 }
 
-.controller img{
+.controller img {
   cursor: pointer;
   transition: transform 0.5s;
 }
 
-.controller img:hover{
+.controller img:hover {
   transform: scale(1.1);
 }
 
-button{
+button {
   background: none;
   border: none;
 }
@@ -67,35 +88,36 @@ button{
   right: 4rem;
 }
 
-.sound img{
+.sound img {
   cursor: pointer;
   transition: transform 0.7s;
 }
 
-.sound img:hover{
+.sound img:hover {
   transform: scale(1.1);
 }
 
-section{
+section {
   position: absolute;
   inset: 0;
   display: grid;
   place-content: center;
-  background-color: #121214;
+  background-color: var(--bc-main);
+  
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 22.8rem;
-  height: 20rem;
+  width: 24rem;
+  height: 23rem;
   background-color: var(--bc-controller);
   border-radius: 5rem;
 }
 
-.container-timer{
+.container-timer {
   display: flex;
   flex-direction: row;
 }
@@ -105,22 +127,21 @@ form div {
   flex-direction: column;
   align-items: center;
   column-gap: 2rem;
-
 }
 
 form label {
   font-family: var(--ff-timer);
   color: var(--fc-timer);
-  font-weight:400;
+  font-weight: 400;
   font-size: 1.35rem;
   margin-bottom: 0.8rem;
 }
 form input {
   width: 6rem;
   height: 5rem;
-  border-radius: .7rem;
+  border-radius: 0.7rem;
   border: none;
-  padding: .7rem;
+  padding: 0.7rem;
   text-align: center;
   font-size: 1.9rem;
   font-family: var(--ff-timer);
@@ -138,16 +159,16 @@ form button {
   cursor: pointer;
 }
 
-form button img{
+form button img {
   width: 5.2rem;
   height: 5.2rem;
   transition: transform 0.7s;
 }
 
-form button img:hover{
+form button img:hover {
   transform: scale(1.1);
 }
 
-.hide{
+.hide {
   display: none;
 }
