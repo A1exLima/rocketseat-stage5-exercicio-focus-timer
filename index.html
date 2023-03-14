@@ -21,12 +21,12 @@
   </head>
   <body>
     <main>
-      <div class="alert-hour-minute">
+      <div class="alert-minute-second">
         <p class="alert">.</p>
       </div>
       <div class="container">
         <div class="cont-timer">
-          <h1><span id="hour">00</span>:<span id="minute">00</span></h1>
+          <h1><span id="minute">00</span>:<span id="second">00</span></h1>
         </div>
         <div class="controller">
           <button class="play">
@@ -55,19 +55,19 @@
         </button>
       </div>
     </main>
-    <section class="box-hour-minute hide">
+    <section class="box-minute-second hide">
       <form>
         <div class="container-timer">
           <div>
-            <label for="InputHour">Hora</label>
-            <input id="InputHour" type="number" min="0" max="23" />
+            <label for="InputMinute">Minutos</label>
+            <input value="0" id="InputMinute" type="number" min="0" max="59" />
           </div>
           <div>
-            <label for="InputMinute">Minuto</label>
-            <input id="InputMinute" type="number" min="0" max="59" />
+            <label for="InputSecond">Segundos</label>
+            <input value="0" id="InputSecond" type="number" min="0" max="59" />
           </div>
         </div>
-        <button class="confirm-hour-minute">
+        <button class="confirm-minute-second">
           <img src="./public/images/verificado.png" alt="Confirmação" />
         </button>
       </form>

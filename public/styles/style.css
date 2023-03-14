@@ -17,7 +17,7 @@ body {
   font-size: 1.6rem;
 }
 
-.alert-hour-minute {
+.alert-minute-second {
   z-index: 1;
   position: absolute;
   color: white;
@@ -133,7 +133,7 @@ form label {
   font-family: var(--ff-timer);
   color: var(--fc-timer);
   font-weight: 400;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   margin-bottom: 0.8rem;
 }
 form input {

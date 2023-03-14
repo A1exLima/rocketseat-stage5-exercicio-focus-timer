@@ -5,6 +5,7 @@ const startupControl = {
   buttonPlay(event) {
     event.preventDefault(event)
     controlButton.Play()
+    controlLogicTimer.countDown()
   },
   buttonPause(event) {
     event.preventDefault(event)
@@ -18,12 +19,12 @@ const startupControl = {
     event.preventDefault(event)
     controlButton.Timer()
   },
-  buttonConfirmHm(event) {
+  buttonConfirmMs(event) {
     event.preventDefault(event)
-    
-    controlButton.ConfirmHourMin()
+
+    controlButton.ConfirmMinSecond()
     controlLogicTimer.checkDecimal()
-    controlLogicTimer.checkValueAndAlert()
+    controlLogicTimer.checkGapValueAndAlert()
   },
   buttonSoundOn(event) {
     event.preventDefault(event)
@@ -41,7 +42,7 @@ const buttonTimer = document.querySelector(".timer")
 const buttonStop = document.querySelector(".stop")
 const buttonSoundOn = document.querySelector(".soundOn")
 const buttonSoundOff = document.querySelector(".soundOff")
-const buttonConfirmHourMin = document.querySelector(".confirm-hour-minute")
+const buttonConfirmMinSecond = document.querySelector(".confirm-minute-second")
 
 buttonPlay.addEventListener("click", startupControl.buttonPlay)
 buttonPause.addEventListener("click", startupControl.buttonPause)
@@ -49,4 +50,4 @@ buttonStop.addEventListener("click", startupControl.buttonStop)
 buttonTimer.addEventListener("click", startupControl.buttonTimer)
 buttonSoundOn.addEventListener("click", startupControl.buttonSoundOn)
 buttonSoundOff.addEventListener("click", startupControl.buttonSoundOff)
-buttonConfirmHourMin.addEventListener("click", startupControl.buttonConfirmHm)
+buttonConfirmMinSecond.addEventListener("click", startupControl.buttonConfirmMs)

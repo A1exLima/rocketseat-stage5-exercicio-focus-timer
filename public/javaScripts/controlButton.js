@@ -5,8 +5,8 @@ export const controlButton = {
   stop: document.querySelector(".stop"),
   soundOn: document.querySelector(".soundOn"),
   soundOff: document.querySelector(".soundOff"),
-  boxTimer: document.querySelector(".box-hour-minute"),
-  confirmHourMin: document.querySelector(".confirm-hour-minute"),
+  boxTimer: document.querySelector(".box-minute-second"),
+  confirmHourMin: document.querySelector(".confirm-minute-second"),
 
   Play() {
     controlButton.play.classList.add("hide")
@@ -41,7 +41,7 @@ export const controlButton = {
     controlButton.soundOff.classList.add("hide")
   },
 
-  ConfirmHourMin(){
+  ConfirmMinSecond() {
     controlButton.boxTimer.classList.add("hide")
   },
 }
