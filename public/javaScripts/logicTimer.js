@@ -54,29 +54,24 @@ export const controlLogicTimer = {
       let minutes = Number(controlLogicTimer.displayMinute.textContent)
       let seconds = Number(controlLogicTimer.displaySecond.textContent)
 
-      let decimalPlaceMinute = minutes <= 10 && minutes != 0
-      let decimalPlaceSecond = seconds <= 10 && seconds != 0
-
-      if (minutes <= 0) {
-        minutes = 60
-      }
-
+      
       if (seconds <= 0) {
         seconds = 60
-        if (decimalPlaceMinute) {
-          controlLogicTimer.displayMinute.textContent = `0${minutes - 1}`
-        } else {
-          controlLogicTimer.displayMinute.textContent = minutes - 1
-        }
+        controlLogicTimer.displayMinute.textContent = String(
+          minutes - 1
+        ).padStart(2, "0")
       }
 
-      if (decimalPlaceSecond) {
-        controlLogicTimer.displaySecond.textContent = `0${seconds - 1}`
-      } else {
-        controlLogicTimer.displaySecond.textContent = seconds - 1
+      controlLogicTimer.displaySecond.textContent = String(
+        seconds - 1
+      ).padStart(2, "0")
+      
+      if (minutes <= 0 && seconds == 1) {
+        controlButton.Stop()
+        return
       }
 
       controlLogicTimer.countDown()
-    }, 1000)
+    }, 100)
   },
 }
