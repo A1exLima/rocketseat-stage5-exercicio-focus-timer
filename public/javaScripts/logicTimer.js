@@ -54,7 +54,6 @@ export const controlLogicTimer = {
       let minutes = Number(controlLogicTimer.displayMinute.textContent)
       let seconds = Number(controlLogicTimer.displaySecond.textContent)
 
-      
       if (seconds <= 0) {
         seconds = 60
         controlLogicTimer.displayMinute.textContent = String(
@@ -65,13 +64,27 @@ export const controlLogicTimer = {
       controlLogicTimer.displaySecond.textContent = String(
         seconds - 1
       ).padStart(2, "0")
-      
+
       if (minutes <= 0 && seconds == 1) {
         controlButton.Stop()
         return
       }
 
       controlLogicTimer.countDown()
-    }, 100)
+    }, 1)
+  },
+
+  setTimerAndPlay() {
+    let minutes = controlLogicTimer.displayMinute.textContent
+    let seconds = controlLogicTimer.displaySecond.textContent
+
+    if (minutes == 0 && seconds == 0) {
+      controlLogicTimer.alertMinuteSecond.innerText =
+        "Digite um valor para MINUTOS e um valor para SEGUNDOS"
+      controlLogicTimer.containerAlerMinuteSecond.classList.add("hide-alert")
+    } else {
+      controlLogicTimer.countDown()
+      controlButton.Play()
+    }
   },
 }

@@ -4,8 +4,8 @@ import { controlLogicTimer } from "./logicTimer.js"
 const startupControl = {
   buttonPlay(event) {
     event.preventDefault(event)
-    controlButton.Play()
-    controlLogicTimer.countDown()
+    
+    controlLogicTimer.setTimerAndPlay()
   },
   buttonPause(event) {
     event.preventDefault(event)
