@@ -36,12 +36,12 @@ const startupControl = {
   buttonSoundOn(event) {
     event.preventDefault(event)
     controlButton.SoundOn()
-    audioData.bgAudio.play()
+    audioData.lofiAudio.play()
   },
   buttonSoundOff(event) {
     event.preventDefault(event)
     controlButton.SoundOff()
-    audioData.bgAudio.pause()
+    audioData.lofiAudio.pause()
   },
 }
 
