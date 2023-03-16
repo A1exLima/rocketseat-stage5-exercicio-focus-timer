@@ -25,7 +25,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 💻 Projeto
 
 <p align="start">
-...
+  Nesse exercício foi desenvolvido as seguintes habilidades voltadas a programação com JS e manipulação da DOM:
+  - Programação Iperativa
+  - Programação Declarativa
+  - novas métodos DOM
+  - Recursão de funções
+  - Padrão Factory ( Organização código)
+  - Manipulação de aúdio
+  
 <p align="center">
   <img alt="Avançando no JavaScript" src="./public/images/classiicacao-IMC-por-1.png" width="50%">
 </p>
