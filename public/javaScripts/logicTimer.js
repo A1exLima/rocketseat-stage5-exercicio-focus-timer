@@ -1,5 +1,6 @@
 import { controlButton } from "./controlButton.js"
 import { projectVariables } from "./projectVariables.js"
+import { audioData } from "./sound.js"
 
 let IdTimerOut
 let InputMinute
@@ -86,12 +87,14 @@ export const controlLogicTimer = {
         "0"
       )
 
+      //reset timer
       if (minutes == 0 && seconds == 0) {
         controlButton.Stop()
+        audioData.kitchenTimer.play()
         return
       }
       controlLogicTimer.countDown()
-    }, 1)
+    }, 1000)
   },
 
   PauseDisplayTimer() {
