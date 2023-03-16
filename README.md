@@ -33,10 +33,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   - Recursão de funções
   - Padrão Factory ( Organização código)
   - Manipulação de aúdio
-  
-<p align="center">
-  <img alt="Avançando no JavaScript" src="./public/images/classiicacao-IMC-por-1.png" width="50%">
-</p>
 
 ## 🔖 Layout
 
