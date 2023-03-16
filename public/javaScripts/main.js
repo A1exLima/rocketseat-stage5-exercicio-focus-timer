@@ -37,6 +37,7 @@ const startupControl = {
     event.preventDefault(event)
     controlButton.SoundOn()
     audioData.lofiAudio.play()
+    audioData.lofiAudio.loop
   },
   buttonSoundOff(event) {
     event.preventDefault(event)
@@ -52,3 +53,4 @@ projectVariables.buttonTimer.addEventListener("click", startupControl.buttonTime
 projectVariables.buttonSoundOn.addEventListener("click", startupControl.buttonSoundOn)
 projectVariables.buttonSoundOff.addEventListener("click", startupControl.buttonSoundOff)
 projectVariables.buttonConfirmMinSecond.addEventListener("click", startupControl.buttonConfirmMs)
+
