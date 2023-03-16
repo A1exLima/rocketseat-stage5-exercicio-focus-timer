@@ -4,16 +4,17 @@ import { controlLogicTimer } from "./logicTimer.js"
 const startupControl = {
   buttonPlay(event) {
     event.preventDefault(event)
-    
     controlLogicTimer.setTimerAndPlay()
   },
   buttonPause(event) {
     event.preventDefault(event)
     controlButton.Pause()
+    controlLogicTimer.PauseDisplayTimer()
   },
   buttonStop(event) {
     event.preventDefault(event)
     controlButton.Stop()
+    controlLogicTimer.StopDisplayTimer()
   },
   buttonTimer(event) {
     event.preventDefault(event)
@@ -21,7 +22,6 @@ const startupControl = {
   },
   buttonConfirmMs(event) {
     event.preventDefault(event)
-
     controlButton.ConfirmMinSecond()
     controlLogicTimer.checkDecimal()
     controlLogicTimer.checkGapValueAndAlert()

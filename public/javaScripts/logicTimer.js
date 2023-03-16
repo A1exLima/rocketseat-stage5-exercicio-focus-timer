@@ -1,16 +1,22 @@
 import { controlButton } from "./controlButton.js"
 
+let IdTimerOut
+let InputMinute
+let InputSecond
+let minutes
+let seconds
+
 export const controlLogicTimer = {
   displayMinute: document.querySelector("#minute"),
   displaySecond: document.querySelector("#second"),
-  containerAlerMinuteSecond: document.querySelector(".alert-minute-second"),
+  containerAlertMinuteSecond: document.querySelector(".alert-minute-second"),
   alertMinuteSecond: document.querySelector(".alert"),
   InputMinute: document.querySelector("#InputMinute"),
   InputSecond: document.querySelector("#InputSecond"),
 
   checkDecimal() {
-    let InputMinute = controlLogicTimer.InputMinute.value
-    let InputSecond = controlLogicTimer.InputSecond.value
+    InputMinute = controlLogicTimer.InputMinute.value
+    InputSecond = controlLogicTimer.InputSecond.value
 
     let decimalPlaceMinute = InputMinute <= 9
     let decimalPlaceSecond = InputSecond <= 9
@@ -29,62 +35,87 @@ export const controlLogicTimer = {
   },
 
   checkGapValueAndAlert() {
-    let InputMinute = controlLogicTimer.InputMinute.value
-    let InputSecond = controlLogicTimer.InputSecond.value
+    InputMinute = controlLogicTimer.InputMinute.value
+    InputSecond = controlLogicTimer.InputSecond.value
+
     let alertInputMinute = InputMinute < 0 || InputMinute > 59
     let alertInputSecond = InputSecond < 0 || InputSecond > 59
 
     if (alertInputMinute) {
       controlLogicTimer.alertMinuteSecond.innerText =
         "Digite um valor entre 0 e 59 minutos"
-      controlLogicTimer.containerAlerMinuteSecond.classList.add("hide-alert")
+      controlLogicTimer.AddAlertContainerDisplay()
       controlButton.Timer()
     } else if (alertInputSecond) {
       controlLogicTimer.alertMinuteSecond.innerText =
         "Digite um valor entre 0 e 59 segundos"
-      controlLogicTimer.containerAlerMinuteSecond.classList.add("hide-alert")
+      controlLogicTimer.AddAlertContainerDisplay()
       controlButton.Timer()
     } else {
-      controlLogicTimer.containerAlerMinuteSecond.classList.remove("hide-alert")
+      controlLogicTimer.containerAlertMinuteSecond.classList.remove(
+        "hide-alert"
+      )
     }
   },
 
-  countDown() {
-    setTimeout(function () {
-      let minutes = Number(controlLogicTimer.displayMinute.textContent)
-      let seconds = Number(controlLogicTimer.displaySecond.textContent)
-
-      if (seconds <= 0) {
-        seconds = 60
-        controlLogicTimer.displayMinute.textContent = String(
-          minutes - 1
-        ).padStart(2, "0")
-      }
-
-      controlLogicTimer.displaySecond.textContent = String(
-        seconds - 1
-      ).padStart(2, "0")
-
-      if (minutes <= 0 && seconds == 1) {
-        controlButton.Stop()
-        return
-      }
-
-      controlLogicTimer.countDown()
-    }, 1)
-  },
-
   setTimerAndPlay() {
-    let minutes = controlLogicTimer.displayMinute.textContent
-    let seconds = controlLogicTimer.displaySecond.textContent
+    minutes = Number(controlLogicTimer.displayMinute.textContent)
+    seconds = Number(controlLogicTimer.displaySecond.textContent)
 
-    if (minutes == 0 && seconds == 0) {
+    let minAndSecReset = minutes == 0 && seconds == 0
+
+    if (minAndSecReset) {
       controlLogicTimer.alertMinuteSecond.innerText =
-        "Digite um valor para MINUTOS e um valor para SEGUNDOS"
-      controlLogicTimer.containerAlerMinuteSecond.classList.add("hide-alert")
+        "INFORME um valor para MINUTOS e um valor para SEGUNDOS"
+      controlLogicTimer.AddAlertContainerDisplay()
     } else {
       controlLogicTimer.countDown()
       controlButton.Play()
     }
+  },
+
+  countDown() {
+    IdTimerOut = setTimeout(function () {
+      minutes = Number(controlLogicTimer.displayMinute.textContent)
+      seconds = Number(controlLogicTimer.displaySecond.textContent)
+
+      if (seconds <= 0) {
+        seconds = 60
+        controlLogicTimer.displayMinute.textContent = String(
+          --minutes
+        ).padStart(2, "0")
+      }
+
+      controlLogicTimer.displaySecond.textContent = String(--seconds).padStart(
+        2,
+        "0"
+      )
+
+      if (minutes == 0 && seconds == 0) {
+        controlButton.Stop()
+        return
+      }
+      controlLogicTimer.countDown()
+    }, 100)
+  },
+
+  PauseDisplayTimer() {
+    clearTimeout(IdTimerOut)
+  },
+
+  StopDisplayTimer() {
+    controlLogicTimer.PauseDisplayTimer()
+    controlLogicTimer.displaySecond.textContent = String(InputSecond).padStart(
+      2,
+      "0"
+    )
+    controlLogicTimer.displayMinute.textContent = String(InputMinute).padStart(
+      2,
+      "0"
+    )
+  },
+
+  AddAlertContainerDisplay() {
+    controlLogicTimer.containerAlertMinuteSecond.classList.add("hide-alert")
   },
 }
