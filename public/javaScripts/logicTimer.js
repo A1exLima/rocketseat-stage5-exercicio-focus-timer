@@ -16,8 +16,7 @@ export const controlLogicTimer = {
   InputSecond: projectVariables.InputSecond,
 
   checkDecimal() {
-    InputMinute = controlLogicTimer.InputMinute.value
-    InputSecond = controlLogicTimer.InputSecond.value
+    controlLogicTimer.captureInputMinSec()
 
     let decimalPlaceMinute = InputMinute <= 9
     let decimalPlaceSecond = InputSecond <= 9
@@ -36,8 +35,7 @@ export const controlLogicTimer = {
   },
 
   checkGapValueAndAlert() {
-    InputMinute = controlLogicTimer.InputMinute.value
-    InputSecond = controlLogicTimer.InputSecond.value
+    controlLogicTimer.captureInputMinSec()
 
     let alertInputMinute = InputMinute < 0 || InputMinute > 59
     let alertInputSecond = InputSecond < 0 || InputSecond > 59
@@ -58,8 +56,7 @@ export const controlLogicTimer = {
   },
 
   setTimerAndPlay() {
-    minutes = Number(controlLogicTimer.displayMinute.textContent)
-    seconds = Number(controlLogicTimer.displaySecond.textContent)
+    controlLogicTimer.textContentVariableMinAndSec()
 
     let minAndSecReset = minutes == 0 && seconds == 0
 
@@ -75,8 +72,7 @@ export const controlLogicTimer = {
 
   countDown() {
     IdTimerOut = setTimeout(function () {
-      minutes = Number(controlLogicTimer.displayMinute.textContent)
-      seconds = Number(controlLogicTimer.displaySecond.textContent)
+      controlLogicTimer.textContentVariableMinAndSec()
 
       if (seconds <= 0) {
         seconds = 60
@@ -116,5 +112,15 @@ export const controlLogicTimer = {
 
   AddAlertContainerDisplay() {
     controlLogicTimer.containerAlertMinSec.classList.add("hide-alert")
+  },
+
+  captureInputMinSec() {
+    InputMinute = controlLogicTimer.InputMinute.value
+    InputSecond = controlLogicTimer.InputSecond.value
+  },
+
+  textContentVariableMinAndSec() {
+    minutes = Number(controlLogicTimer.displayMinute.textContent)
+    seconds = Number(controlLogicTimer.displaySecond.textContent)
   },
 }
