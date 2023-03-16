@@ -26,6 +26,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 <p align="start">
   Nesse exercício foi desenvolvido as seguintes habilidades voltadas a programação com JS e manipulação da DOM:
+  
   - Programação Iperativa
   - Programação Declarativa
   - novas métodos DOM
@@ -39,7 +40,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/qKipsBbtJmBkEY8RJmgnsy/Explorer-Stage-05-Projeto-01-(Copy)?node-id=1%3A23&t=ldxfvy7AiM6ghjqF-0). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+Você pode visualizar o layout do projeto através [DESSE LINK](<https://www.figma.com/file/qKipsBbtJmBkEY8RJmgnsy/Explorer-Stage-05-Projeto-01-(Copy)?node-id=1%3A23&t=ldxfvy7AiM6ghjqF-0>). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
 ## :memo: Licença
 
@@ -52,7 +53,3 @@ Esse projeto está sob a licença MIT.
 <p align="center">Você pode acessar o Website do projeto através do link: 
 <a href= "https://alima07.github.io/rocketseat-stage5-exercicio-focus-timer/" target="_blank"> Clique aqui ⏯ </a>
 </p>
-
-
-
-
