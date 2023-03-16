@@ -1,0 +1,16 @@
+export const projectVariables = {
+  buttonPlay: document.querySelector(".play"),
+  buttonPause: document.querySelector(".pause"),
+  buttonTimer: document.querySelector(".timer"),
+  buttonStop: document.querySelector(".stop"),
+  buttonSoundOn: document.querySelector(".soundOn"),
+  buttonSoundOff: document.querySelector(".soundOff"),
+  buttonConfirmMinSecond: document.querySelector(".confirm-minute-second"),
+  boxTimer: document.querySelector(".box-minute-second"),
+  displayMinute: document.querySelector("#minute"),
+  displaySecond: document.querySelector("#second"),
+  containerAlertMinSec: document.querySelector(".alert-minute-second"),
+  alertMinSec: document.querySelector(".alert"),
+  InputMinute: document.querySelector("#InputMinute"),
+  InputSecond: document.querySelector("#InputSecond"),
+}

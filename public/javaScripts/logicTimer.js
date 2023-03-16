@@ -1,4 +1,5 @@
 import { controlButton } from "./controlButton.js"
+import { projectVariables } from "./projectVariables.js"
 
 let IdTimerOut
 let InputMinute
@@ -7,12 +8,12 @@ let minutes
 let seconds
 
 export const controlLogicTimer = {
-  displayMinute: document.querySelector("#minute"),
-  displaySecond: document.querySelector("#second"),
-  containerAlertMinuteSecond: document.querySelector(".alert-minute-second"),
-  alertMinuteSecond: document.querySelector(".alert"),
-  InputMinute: document.querySelector("#InputMinute"),
-  InputSecond: document.querySelector("#InputSecond"),
+  displayMinute: projectVariables.displayMinute,
+  displaySecond: projectVariables.displaySecond,
+  containerAlertMinSec: projectVariables.containerAlertMinSec,
+  alertMinSec: projectVariables.alertMinSec,
+  InputMinute: projectVariables.InputMinute,
+  InputSecond: projectVariables.InputSecond,
 
   checkDecimal() {
     InputMinute = controlLogicTimer.InputMinute.value
@@ -42,19 +43,17 @@ export const controlLogicTimer = {
     let alertInputSecond = InputSecond < 0 || InputSecond > 59
 
     if (alertInputMinute) {
-      controlLogicTimer.alertMinuteSecond.innerText =
+      controlLogicTimer.alertMinSec.innerText =
         "Digite um valor entre 0 e 59 minutos"
       controlLogicTimer.AddAlertContainerDisplay()
       controlButton.Timer()
     } else if (alertInputSecond) {
-      controlLogicTimer.alertMinuteSecond.innerText =
+      controlLogicTimer.alertMinSec.innerText =
         "Digite um valor entre 0 e 59 segundos"
       controlLogicTimer.AddAlertContainerDisplay()
       controlButton.Timer()
     } else {
-      controlLogicTimer.containerAlertMinuteSecond.classList.remove(
-        "hide-alert"
-      )
+      controlLogicTimer.containerAlertMinSec.classList.remove("hide-alert")
     }
   },
 
@@ -65,7 +64,7 @@ export const controlLogicTimer = {
     let minAndSecReset = minutes == 0 && seconds == 0
 
     if (minAndSecReset) {
-      controlLogicTimer.alertMinuteSecond.innerText =
+      controlLogicTimer.alertMinSec.innerText =
         "INFORME um valor para MINUTOS e um valor para SEGUNDOS"
       controlLogicTimer.AddAlertContainerDisplay()
     } else {
@@ -96,7 +95,7 @@ export const controlLogicTimer = {
         return
       }
       controlLogicTimer.countDown()
-    }, 100)
+    }, 1)
   },
 
   PauseDisplayTimer() {
@@ -116,6 +115,6 @@ export const controlLogicTimer = {
   },
 
   AddAlertContainerDisplay() {
-    controlLogicTimer.containerAlertMinuteSecond.classList.add("hide-alert")
+    controlLogicTimer.containerAlertMinSec.classList.add("hide-alert")
   },
 }

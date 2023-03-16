@@ -1,12 +1,14 @@
+import { projectVariables } from "./projectVariables.js"
+
 export const controlButton = {
-  play: document.querySelector(".play"),
-  pause: document.querySelector(".pause"),
-  timer: document.querySelector(".timer"),
-  stop: document.querySelector(".stop"),
-  soundOn: document.querySelector(".soundOn"),
-  soundOff: document.querySelector(".soundOff"),
-  boxTimer: document.querySelector(".box-minute-second"),
-  confirmHourMin: document.querySelector(".confirm-minute-second"),
+  play: projectVariables.buttonPlay,
+  pause: projectVariables.buttonPause,
+  timer: projectVariables.buttonTimer,
+  stop: projectVariables.buttonStop,
+  soundOn: projectVariables.buttonSoundOn,
+  soundOff: projectVariables.buttonSoundOff,
+  confirmHourMin: projectVariables.buttonConfirmMinSecond,
+  boxTimer: projectVariables.boxTimer,
 
   Play() {
     controlButton.play.classList.add("hide")

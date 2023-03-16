@@ -1,5 +1,6 @@
 import { controlButton } from "./controlButton.js"
 import { controlLogicTimer } from "./logicTimer.js"
+import { projectVariables } from "./projectVariables.js"
 
 const startupControl = {
   buttonPlay(event) {
@@ -36,18 +37,10 @@ const startupControl = {
   },
 }
 
-const buttonPlay = document.querySelector(".play")
-const buttonPause = document.querySelector(".pause")
-const buttonTimer = document.querySelector(".timer")
-const buttonStop = document.querySelector(".stop")
-const buttonSoundOn = document.querySelector(".soundOn")
-const buttonSoundOff = document.querySelector(".soundOff")
-const buttonConfirmMinSecond = document.querySelector(".confirm-minute-second")
-
-buttonPlay.addEventListener("click", startupControl.buttonPlay)
-buttonPause.addEventListener("click", startupControl.buttonPause)
-buttonStop.addEventListener("click", startupControl.buttonStop)
-buttonTimer.addEventListener("click", startupControl.buttonTimer)
-buttonSoundOn.addEventListener("click", startupControl.buttonSoundOn)
-buttonSoundOff.addEventListener("click", startupControl.buttonSoundOff)
-buttonConfirmMinSecond.addEventListener("click", startupControl.buttonConfirmMs)
+projectVariables.buttonPlay.addEventListener("click", startupControl.buttonPlay)
+projectVariables.buttonPause.addEventListener("click", startupControl.buttonPause)
+projectVariables.buttonStop.addEventListener("click", startupControl.buttonStop)
+projectVariables.buttonTimer.addEventListener("click", startupControl.buttonTimer)
+projectVariables.buttonSoundOn.addEventListener("click", startupControl.buttonSoundOn)
+projectVariables.buttonSoundOff.addEventListener("click", startupControl.buttonSoundOff)
+projectVariables.buttonConfirmMinSecond.addEventListener("click", startupControl.buttonConfirmMs)
