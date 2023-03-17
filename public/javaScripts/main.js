@@ -37,7 +37,7 @@ const startupControl = {
     event.preventDefault(event)
     controlButton.SoundOn()
     audioData.lofiAudio.play()
-    audioData.lofiAudio.loop
+    audioData.lofiAudio.loop = true
   },
   buttonSoundOff(event) {
     event.preventDefault(event)
