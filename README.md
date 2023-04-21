@@ -47,5 +47,5 @@ Esse projeto está sob a licença MIT.
 <p align="center">Feito com  ♥  by Alex Lima</p>
 
 <p align="center">Você pode acessar o Website do projeto através do link: 
-<a href= "https://alima07.github.io/rocketseat-stage5-exercicio-focus-timer/" target="_blank"> Clique aqui ⏯ </a>
+<a href= "https://A1exLima.github.io/rocketseat-stage5-exercicio-focus-timer/" target="_blank"> Clique aqui ⏯ </a>
 </p>
